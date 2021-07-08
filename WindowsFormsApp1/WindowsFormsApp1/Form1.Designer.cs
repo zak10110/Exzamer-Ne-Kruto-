@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
             resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += Button2_Click;
             // 
             // button3
             // 
@@ -97,6 +98,12 @@ namespace WindowsFormsApp1
 
           
 
+        }
+
+        private void Button2_Click(object sender, System.EventArgs e)
+        {
+            Form3 testDialog2 = new Form3();
+            testDialog2.ShowDialog(this);
         }
 
         private void Button3_Click(object sender, System.EventArgs e)
