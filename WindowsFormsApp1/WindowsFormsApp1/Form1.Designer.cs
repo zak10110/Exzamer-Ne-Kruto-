@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using DLL_ForZametki;
 
 namespace WindowsFormsApp1
 {
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
+
             // 
             // button2
             // 
@@ -95,8 +97,18 @@ namespace WindowsFormsApp1
             this.Name = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.Load += Form1_Load;
+           
 
-          
+
+        }
+
+        
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+
+            //Manager.TakeTextNote(this.monthCalendar1.);
+
 
         }
 

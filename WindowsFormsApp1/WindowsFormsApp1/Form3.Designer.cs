@@ -1,4 +1,7 @@
-﻿namespace WindowsFormsApp1
+﻿
+using DLL_ForZametki;
+
+namespace WindowsFormsApp1
 {
     partial class Form3
     {
@@ -39,6 +42,8 @@
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.Color.Teal;
             this.textBox1.Name = "textBox1";
+            this.FormClosing += Form3_FormClosing;
+            
             // 
             // textBox2
             // 
@@ -64,6 +69,16 @@
             this.PerformLayout();
 
         }
+
+        private void Form3_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+           
+            Manager.CreateNote(this.textBox1.Text, this.textBox2.Text, this.dateTimePicker1.Value);
+            Manager.SaveNote(this.textBox1.Text,$"{this.dateTimePicker1.Value.Day}.txt");
+        
+        }
+
+       
 
         #endregion
 
