@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 using DLL_ForZametki;
 
 namespace WindowsFormsApp1
@@ -98,17 +99,20 @@ namespace WindowsFormsApp1
             this.ResumeLayout(false);
             this.PerformLayout();
             this.Load += Form1_Load;
-           
-
+            text = new TextBox();
+            this.text.Location = new Point(this.myzametki.Location.X, this.myzametki.Location.Y);
+            this.text.Size = new Size(this.myzametki.Size.Width, this.myzametki.Size.Height);
+            this.Controls.Add(this.text);
 
         }
+        private TextBox text;
 
         
         private void Form1_Load(object sender, System.EventArgs e)
         {
 
-            //Manager.TakeTextNote(this.monthCalendar1.);
-
+            this.text.Text = Manager.TakeTextNote($"{this.monthCalendar1.SelectionStart.Day.ToString()}.txt");
+            
 
         }
 
