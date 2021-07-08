@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System.Drawing;
+
+namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -76,6 +78,9 @@
             // 
             // Form1
             // 
+
+            myzametki = new Zametki(new System.Drawing.Size(this.monthCalendar1.Size.Width, this.monthCalendar1.Size.Height), new System.Drawing.Point(this.monthCalendar1.Location.X, this.monthCalendar1.Location.Y), Color.DarkGray);
+
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button4);
@@ -84,9 +89,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(myzametki);
             this.Name = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
+
+          
 
         }
 
@@ -98,6 +106,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private Zametki myzametki;
     }
 }
 
