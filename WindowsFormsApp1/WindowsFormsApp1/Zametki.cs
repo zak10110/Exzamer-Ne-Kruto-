@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         {
            
             this.Paint += Button_Peint;
-
+            
 
         }
 
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         private void Button_Peint(object sender, System.EventArgs e)
         {
             var draw = this.CreateGraphics();
-            draw.FillRectangle(brush, new Rectangle(new Point(0,0),new Size(55,55)));
+            draw.FillRectangle(brush, new Rectangle(new Point(0,0),this.Size));
             
 
         }

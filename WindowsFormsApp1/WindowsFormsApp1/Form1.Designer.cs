@@ -68,6 +68,7 @@ namespace WindowsFormsApp1
             resources.ApplyResources(this.button4, "button4");
             this.button4.Name = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += Button3_Click;
             // 
             // button1
             // 
@@ -79,7 +80,7 @@ namespace WindowsFormsApp1
             // Form1
             // 
 
-            myzametki = new Zametki(new System.Drawing.Size(this.monthCalendar1.Size.Width, this.monthCalendar1.Size.Height), new System.Drawing.Point(this.monthCalendar1.Location.X, this.monthCalendar1.Location.Y), Color.DarkGray);
+            myzametki = new Zametki(new System.Drawing.Size(this.monthCalendar1.Size.Width, this.monthCalendar1.Size.Height-20), new System.Drawing.Point(this.monthCalendar1.Location.X+this.monthCalendar1.Size.Width, this.monthCalendar1.Location.Y), Color.DarkGray);
 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,6 +97,13 @@ namespace WindowsFormsApp1
 
           
 
+        }
+
+        private void Button3_Click(object sender, System.EventArgs e)
+        {
+            Form2 testDialog = new Form2();
+            testDialog.ShowDialog(this);
+            
         }
 
         #endregion
